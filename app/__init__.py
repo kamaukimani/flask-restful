@@ -3,6 +3,7 @@ from .config import Config
 from flask import Flask 
 from .routes import *
 from flask_restful import Api
+from .models import *
 
 def create_app():
     app=Flask(__name__)
