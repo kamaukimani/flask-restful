@@ -16,5 +16,6 @@ def create_app():
     api=Api(app)
 
     api.add_resource(Home,"/")
+    api.add_resource(Newsletters,"/newsletters")
 
     return app
