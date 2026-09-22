@@ -11,7 +11,7 @@ class Newsletter(db.Model,SerializerMixin):
     title:Mapped[str]
     body:Mapped[str]
     published_at:Mapped[datetime]=mapped_column(server_default=func.now())
-    edited_at:Mapped[datetime]=mapped_column(server_default=func.now(),onupdae=func.now())
+    edited_at:Mapped[datetime]=mapped_column(server_default=func.now(),onupdate=func.now())
 
     def __repr__(self):
         return f"<Newsletter {self.title} published at {self.published_at}>"
