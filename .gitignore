@@ -64,4 +64,5 @@ __pycache__
 instance
 .vscode
 package-lock.json
-app.config.py
+app/config.py
+.env
