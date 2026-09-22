@@ -59,4 +59,17 @@ class NewsletterById(Resource):
             200
         )
         return response
+    def delete(self,id):
+        newsletter=Newsletter.query.filter(Newsletter.id == id).first()
+        if newsletter is None:
+            return {"message":"OOOpps!!!!The record does not exist in our database"},404
+        db.session.delete(newsletter)
+        db.session.commit()
+            
+        response={
+            "deleted_successfully":True,
+            "message":"The newsletter has been successfully deleted............."
+        }
+        return response,200
+
 
